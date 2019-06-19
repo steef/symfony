@@ -51,7 +51,7 @@ class ExceptionHandlerTest extends TestCase
         $this->assertContains('<h1 class="break-long-words exception-message">Foo</h1>', $response);
         $this->assertContains('<div class="trace trace-as-html">', $response);
 
-        // taken from https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
+        // taken from https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md
         $htmlWithXss = '<body onload=alert(\'test1\')> <b onmouseover=alert(\'Wufff!\')>click me!</b> <img src="j&#X41vascript:alert(\'test2\')"> <meta http-equiv="refresh"
 content="0;url=data:text/html;base64,PHNjcmlwdD5hbGVydCgndGVzdDMnKTwvc2NyaXB0Pg">';
         ob_start();
